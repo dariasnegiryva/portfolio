@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Tamagotchi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="tamagotchi">
+
+    <img class="device" src="images/device_cat.png" alt="Catagotchi">
+
+    <!-- ЭКРАН - всё внутри него -->
+    <div class="screen">
+        
+        <img class="screen-bg" src="images/screen_bg.png" alt="background">
+
+        <!-- Персонаж -->
+        <img id="pet" class="pixel-pet" src="images/cat_idle_1.png" alt="pixel cat">
+
+<!-- Статистика внутри экрана (только иконка + цифра) -->
+<div class="stats-inside">
+    <div class="stat">
+        <img src="images/icon_hunger.png" class="stat-icon" alt="🍖">
+        <span id="hunger">50</span>
+    </div>
+    <div class="stat">
+        <img src="images/icon_happiness.png" class="stat-icon" alt="😊">
+        <span id="happiness">50</span>
+    </div>
+    <div class="stat">
+        <img src="images/icon_energy.png" class="stat-icon" alt="⚡">
+        <span id="energy">50</span>
+    </div>
+    
+</div>
+<!-- ========= НОВАЯ ПОЛОСКА ЗДОРОВЬЯ (без цифр) ========= -->
+        <div class="health-bar-container">
+            <div class="health-bar-fill" id="healthFill"></div>
+        </div>
+
+        <!-- Нижняя строка действий -->
+        <div class="action-bar" id="action">
+            FEED
+        </div>
+
+    </div>
+    <!-- КНОПКИ: левая, правая, нижняя (длинная) -->
+    <div class="buttons">
+        <button id="left" class="side-btn">
+            <img src="images/btn_left.png" alt="left">
+        </button>
+        
+        <button id="right" class="side-btn">
+            <img src="images/btn_right.png" alt="right">
+        </button>
+        
+        <button id="select" class="bottom-btn">
+            <img src="images/btn_select.png" alt="select">
+        </button>
+    </div>
+    
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html> 

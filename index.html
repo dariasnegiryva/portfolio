@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Daria Snegireva — UI/UX Designer & Frontend Developer | AI Animation</title>
+<meta name="description" content="Daria Snegireva — UI/UX Designer & Frontend Developer. 5+ years experience. Open to remote work and relocation to Australia (Sydney/Melbourne).">
+<meta name="keywords" content="UI/UX Designer, Frontend Developer, AI Animation, Pixel Art, Portfolio, Australia, Sydney, Melbourne, Remote">
+<meta name="author" content="Daria Snegireva">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#f0f0e8;
+  --surface:#fafaf5;
+  --surface2:#f2f0e6;
+  --ink:#0d0d0d;
+  --ink2:#3a3a3a;
+  --lime:#c8ff00;
+  --lime-dark:#9bcc00;
+  --border:#0d0d0d;
+  --card:#ffffff;
+  --accent2:#ff3c5f;
+  --text-on-lime:#0a1a00;
+}
+body.dark{
+  --bg:#080810;
+  --surface:#0f0f1a;
+  --surface2:#181828;
+  --ink:#f0f0e8;
+  --ink2:#b0b0c8;
+  --lime:#c8ff00;
+  --lime-dark:#a0cc00;
+  --border:#c8ff00;
+  --card:#1a1a2a;
+  --accent2:#ff5577;
+  --text-on-lime:#0a1a00;
+}
+
+body{
+  background:var(--bg);
+  font-family:'Space Grotesk',sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+  line-height:1.6;
+  transition:background .3s,color .3s;
+}
+
+  <!-- SEO Meta Tags -->
+    <title>Daria Snegireva — UI/UX Designer & Frontend Developer | AI Animation Portfolio</title>
+    <meta name="description" content="Daria Snegireva — UI/UX Designer & Frontend Developer specializing in AI-powered animation. 5+ years of experience. Open to relocation to Australia (Sydney/Melbourne).">
+    <meta name="keywords" content="UI/UX Designer, Frontend Developer, AI Animation, Pixel Art, Portfolio, Australia, Sydney, Melbourne, Relocation">
+    <meta name="author" content="Daria Snegireva">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Daria Snegireva — UI/UX Designer & Frontend Developer">
+    <meta property="og:description" content="Designer & developer specializing in AI animation. 5+ years of experience. Open to relocation to Australia.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://daria.design/images/og-image.png">
+    <meta property="og:url" content="https://daria.design">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Daria Snegireva — UI/UX Designer & Frontend Developer">
+    <meta name="twitter:description" content="Designer & developer specializing in AI animation. Open to relocation to Australia.">
+    <meta name="twitter:image" content="https://daria.design/images/og-image.png">
+    
+    <!-- Favicon (замените на свой) -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+/* ─── SCANLINE TEXTURE ─── */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.015) 2px,rgba(0,0,0,0.015) 4px);
+  pointer-events:none;
+  z-index:0;
+}
+
+.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 24px 80px;
+  position:relative;
+  z-index:1;
+}
+
+/* ─── NAV ─── */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+  padding:20px 0 16px;
+  border-bottom:3px solid var(--lime);
+  margin-bottom:40px;
+}
+.nav-links{display:flex;gap:8px;flex-wrap:wrap}
+.nav-links a{
+  font-family:'Space Mono',monospace;
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-decoration:none;
+  padding:7px 16px;
+  border:2px solid var(--border);
+  color:var(--ink);
+  background:var(--card);
+  transition:all .1s;
+  display:inline-block;
+}
+.nav-links a:hover{
+  background:var(--lime);
+  color:var(--text-on-lime);
+  transform:translate(-2px,-2px);
+  box-shadow:3px 3px 0 var(--border);
+}
+.theme-btn{
+  font-family:'Space Mono',monospace;
+  font-size:12px;
+  font-weight:700;
+  padding:8px 18px;
+  border:2px solid var(--border);
+  background:var(--lime);
+  color:var(--text-on-lime);
+  cursor:pointer;
+  transition:all .1s;
+}
+.theme-btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--border)}
+
+/* ─── HERO ─── */
+.hero{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:40px;
+  align-items:start;
+  margin-bottom:56px;
+}
+@media(max-width:700px){.hero{grid-template-columns:1fr}}
+
+.hero-name{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(40px,6vw,72px);
+  font-weight:700;
+  line-height:1.05;
+  margin-bottom:16px;
+}
+/* LIGHT MODE: black text with slight text-shadow for visibility */
+.hero-name .accent{
+  color:var(--lime-dark);
+  -webkit-text-stroke:2px var(--border);
+  paint-order:stroke fill;
+}
+/* DARK MODE: bright lime, no stroke needed */
+body.dark .hero-name .accent{
+  color:var(--lime);
+  -webkit-text-stroke:0;
+  text-shadow:0 0 20px rgba(200,255,0,0.4);
+}
+
+.hero-sub{
+  font-size:clamp(14px,2vw,18px);
+  font-weight:600;
+  color:var(--ink2);
+  background:var(--card);
+  border-left:5px solid var(--lime);
+  padding:10px 18px;
+  margin-bottom:24px;
+  display:inline-block;
+  border:2px solid var(--border);
+  border-left:6px solid var(--lime);
+}
+
+.hero-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:28px;
+}
+.tag{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  padding:5px 12px;
+  background:var(--card);
+  border:2px solid var(--border);
+  color:var(--ink);
+}
+.tag.lime{
+  background:var(--lime);
+  color:var(--text-on-lime);
+  border-color:var(--border);
+}
+
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  font-family:'Space Mono',monospace;
+  font-size:13px;
+  font-weight:700;
+  padding:12px 28px;
+  text-decoration:none;
+  border:2px solid var(--border);
+  display:inline-block;
+  transition:all .1s;
+  cursor:pointer;
+}
+.btn-primary{background:var(--lime);color:var(--text-on-lime)}
+.btn-secondary{background:var(--card);color:var(--ink)}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--border)}
+
+/* ─── PORTRAIT BOX ─── */
+.portrait-wrap{
+  background:var(--lime);
+  border:3px solid var(--border);
+  box-shadow:8px 8px 0 var(--border);
+  padding:8px 8px 14px 14px;
+  transition:all .15s;
+}
+.portrait-wrap:hover{transform:translate(-3px,-3px);box-shadow:12px 12px 0 var(--border)}
+.portrait-inner{
+  width:160px;
+  height:160px;
+  background:var(--card);
+  border:2px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:64px;
+  image-rendering:pixelated;
+  overflow:hidden;
+}
+.portrait-inner img{width:100%;height:100%;object-fit:cover;image-rendering:pixelated}
+.portrait-label{
+  font-family:'Space Mono',monospace;
+  font-size:9px;
+  text-align:center;
+  color:var(--text-on-lime);
+  margin-top:8px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* ─── STATUS BAR ─── */
+.status-bar{
+  background:var(--ink);
+  color:var(--lime);
+  font-family:'Space Mono',monospace;
+  font-size:12px;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:48px;
+  border:2px solid var(--border);
+}
+.status-bar span{opacity:.85}
+.status-bar .blink{animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* ─── SECTION LABEL ─── */
+.section-label{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  color:var(--ink);
+  background:var(--lime);
+  display:inline-block;
+  padding:6px 14px;
+  border:2px solid var(--border);
+  margin-bottom:24px;
+}
+/* Dark mode section label - lime bg stays, text stays dark so it's readable */
+body.dark .section-label{
+  color:var(--text-on-lime);
+}
+
+section{margin-bottom:56px}
+
+/* ─── SKILLS GRID ─── */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+@media(max-width:800px){.skills-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.skills-grid{grid-template-columns:1fr}}
+
+.skill-card{
+  background:var(--card);
+  border:2px solid var(--border);
+  padding:20px 16px;
+  text-align:center;
+  transition:all .1s;
+}
+.skill-card:hover{
+  background:var(--lime);
+  transform:translate(-2px,-2px);
+  box-shadow:4px 4px 0 var(--border);
+}
+.skill-card:hover .skill-name{color:var(--text-on-lime)}
+.skill-card:hover .skill-sub{color:var(--text-on-lime);opacity:.7}
+.skill-icon{font-size:28px;margin-bottom:10px}
+.skill-name{font-weight:700;font-size:15px;color:var(--ink);margin-bottom:6px}
+.skill-sub{font-size:11px;color:var(--ink2);font-family:'Space Mono',monospace;line-height:1.5}
+
+/* ─── TECH STACK ─── */
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+@media(max-width:600px){.tech-grid{grid-template-columns:1fr}}
+
+.tech-card{
+  background:var(--card);
+  border:2px solid var(--border);
+  padding:20px;
+}
+.tech-card h4{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--lime-dark);
+  margin-bottom:10px;
+  -webkit-text-stroke:0.5px var(--border);
+  paint-order:stroke fill;
+}
+body.dark .tech-card h4{
+  color:var(--lime);
+  -webkit-text-stroke:0;
+  text-shadow:none;
+}
+.tech-card p{font-size:13px;color:var(--ink2);line-height:1.7}
+
+/* ─── PROJECTS ─── */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+@media(max-width:860px){.projects-grid{grid-template-columns:1fr}}
+
+.project-card{
+  background:var(--card);
+  border:2px solid var(--border);
+  padding:28px 22px;
+  transition:all .1s;
+  cursor:pointer;
+}
+.project-card:hover{
+  transform:translate(-3px,-3px);
+  box-shadow:6px 6px 0 var(--lime);
+  border-color:var(--lime-dark);
+}
+body.dark .project-card:hover{
+  box-shadow:6px 6px 0 var(--lime);
+  border-color:var(--lime);
+}
+.project-number{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  color:var(--ink2);
+  margin-bottom:10px;
+  letter-spacing:2px;
+}
+.project-card h3{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:10px;
+  color:var(--ink);
+}
+.project-card p{font-size:13px;color:var(--ink2);margin-bottom:16px;line-height:1.6}
+.project-tag{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  padding:3px 10px;
+  background:var(--bg);
+  border:1.5px solid var(--border);
+  color:var(--ink);
+  display:inline-block;
+  margin:2px 2px 0 0;
+}
+
+/* ─── AI SECTION ─── */
+.ai-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+@media(max-width:700px){.ai-grid{grid-template-columns:1fr}}
+
+.ai-card{
+  background:var(--card);
+  border:2px solid var(--border);
+  padding:24px;
+  transition:all .1s;
+}
+.ai-card:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--border)}
+.ai-badge{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  background:var(--ink);
+  color:var(--lime);
+  padding:4px 12px;
+  display:inline-block;
+  margin-bottom:14px;
+}
+.ai-card h3{font-size:22px;font-weight:700;margin-bottom:12px;color:var(--ink)}
+.ai-card p{font-size:13px;color:var(--ink2);margin-top:12px}
+.video-wrap{
+  aspect-ratio:16/9;
+  border:2px solid var(--border);
+  overflow:hidden;
+}
+.video-wrap iframe{width:100%;height:100%;display:block;border:none}
+
+/* ─── ABOUT ─── */
+.about-box{
+  background:var(--card);
+  border:2px solid var(--border);
+  border-left:8px solid var(--lime);
+  padding:32px;
+}
+.about-box p{font-size:15px;color:var(--ink2);margin-bottom:18px;line-height:1.75}
+.about-box p:last-child{margin-bottom:0}
+.about-box strong{color:var(--ink);font-weight:700}
+.relocation-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--lime);
+  color:var(--text-on-lime);
+  font-weight:700;
+  font-size:14px;
+  padding:10px 20px;
+  border:2px solid var(--border);
+  margin-top:20px;
+  font-family:'Space Mono',monospace;
+}
+
+/* ─── TAMAGOTCHI SECTION ─── */
+.tama-section{
+  margin:40px 0;
+}
+.tama-label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+.tama-label h2{
+  font-family:'Space Mono',monospace;
+  font-size:14px;
+  font-weight:700;
+  color:var(--ink);
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+.tama-label p{font-size:13px;color:var(--ink2)}
+.tama-wrapper{
+  border:3px solid var(--border);
+  box-shadow:10px 10px 0 var(--lime);
+  background:var(--card);
+  overflow:hidden;
+}
+body.dark .tama-wrapper{
+  box-shadow:10px 10px 0 var(--lime);
+}
+
+/* ─── TAMAGOTCHI GAME ─── */
+.tama-game{
+  background:#0d0d1a;
+  padding:32px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-family:'Space Mono',monospace;
+}
+.tama-screen{
+  width:260px;
+  background:#1a2a1a;
+  border:4px solid #333;
+  border-radius:4px;
+  padding:16px;
+  box-shadow:inset 0 0 20px rgba(0,0,0,0.5),0 0 30px rgba(100,255,0,0.1);
+  position:relative;
+}
+.tama-pet-area{
+  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:52px;
+  position:relative;
+}
+.tama-pet{
+  transition:all .3s;
+  cursor:default;
+  user-select:none;
+  display:inline-block;
+  image-rendering:pixelated;
+}
+.tama-pet.bounce{animation:petBounce .4s ease}
+@keyframes petBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.tama-pet.shake{animation:petShake .3s ease}
+@keyframes petShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+.tama-pet.sad{filter:grayscale(.6) brightness(.8)}
+.tama-pet.sleeping{animation:sleeping 2s infinite}
+@keyframes sleeping{0%,100%{opacity:1}50%{opacity:.6}}
+
+.tama-stats{
+  margin-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.tama-stat-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:9px;
+  color:#6aff3c;
+  letter-spacing:1px;
+}
+.tama-stat-label{width:24px;flex-shrink:0}
+.tama-bar-bg{
+  flex:1;
+  height:6px;
+  background:#0d200d;
+  border:1px solid #2a4a2a;
+  border-radius:0;
+  overflow:hidden;
+}
+.tama-bar-fill{
+  height:100%;
+  background:#6aff3c;
+  transition:width .5s ease;
+}
+.tama-bar-fill.warning{background:#ffa020}
+.tama-bar-fill.danger{background:#ff3c3c}
+
+.tama-status-msg{
+  font-size:8px;
+  color:#6aff3c;
+  text-align:center;
+  margin-top:8px;
+  min-height:14px;
+  letter-spacing:1px;
+}
+
+/* PIXEL ART PET STYLES */
+.pixel-pet-svg{
+  width:72px;
+  height:72px;
+  image-rendering:pixelated;
+}
+
+.tama-actions{
+  display:flex;
+  gap:8px;
+  margin-top:16px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.tama-btn{
+  font-family:'Space Mono',monospace;
+  font-size:9px;
+  font-weight:700;
+  padding:8px 14px;
+  background:#1a2a1a;
+  color:#6aff3c;
+  border:2px solid #3a5a3a;
+  cursor:pointer;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  transition:all .1s;
+  border-radius:0;
+}
+.tama-btn:hover{background:#2a4a2a;border-color:#6aff3c;transform:translate(-1px,-1px);box-shadow:2px 2px 0 #6aff3c}
+.tama-btn:active{transform:translate(1px,1px);box-shadow:none}
+.tama-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+
+.tama-mood{
+  margin-top:12px;
+  font-size:10px;
+  color:#4aaa4a;
+  letter-spacing:2px;
+  text-align:center;
+}
+
+/* ─── CONTACT ─── */
+.contact-block{
+  text-align:center;
+  border-top:3px solid var(--lime);
+  padding-top:48px;
+  margin-top:48px;
+}
+.contact-title{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(24px,4vw,42px);
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.contact-sub{font-size:14px;color:var(--ink2);margin-bottom:32px}
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:40px;
+}
+.contact-link{
+  font-family:'Space Mono',monospace;
+  font-size:12px;
+  font-weight:700;
+  padding:10px 22px;
+  text-decoration:none;
+  border:2px solid var(--border);
+  background:var(--card);
+  color:var(--ink);
+  transition:all .1s;
+  letter-spacing:.5px;
+}
+.contact-link:hover{
+  background:var(--lime);
+  color:var(--text-on-lime);
+  transform:translate(-2px,-2px);
+  box-shadow:3px 3px 0 var(--border);
+}
+
+footer{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  color:var(--ink2);
+  text-align:center;
+  letter-spacing:1px;
+  margin-top:24px;
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#ai">AI Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="theme-btn" id="themeBtn">◐ Dark</button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <div class="hero-name">
+      <span class="accent">DARIA</span><br>
+      <span class="accent">SNEGI</span>REVA
+    </div>
+    <div class="hero-sub">UI/UX Designer · Frontend Dev · AI Animator</div>
+    <div class="hero-tags">
+      <span class="tag lime">📍 Open to Relocation → AU</span>
+      <span class="tag">5+ Years Exp.</span>
+      <span class="tag">Remote Friendly</span>
+      <span class="tag">Sydney / Melbourne</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-primary">[ View Projects ]</a>
+      <a href="#contact" class="btn btn-secondary">[ Get in Touch ]</a>
+    </div>
+  </div>
+  <div class="portrait-wrap">
+    <div class="portrait-inner" title="Pixel portrait of Daria">
+      <!-- Pixel art placeholder - replace with actual image -->
+      <svg width="160" height="160" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;image-rendering:pixelated">
+        <rect width="16" height="16" fill="#1a1a2a"/>
+        <!-- Hair -->
+        <rect x="4" y="1" width="8" height="1" fill="#c8ff00"/>
+        <rect x="3" y="2" width="10" height="1" fill="#c8ff00"/>
+        <rect x="3" y="3" width="2" height="3" fill="#c8ff00"/>
+        <rect x="11" y="3" width="2" height="3" fill="#c8ff00"/>
+        <!-- Face -->
+        <rect x="4" y="3" width="8" height="6" fill="#e8c498"/>
+        <!-- Eyes -->
+        <rect x="5" y="5" width="2" height="1" fill="#1a1a2a"/>
+        <rect x="9" y="5" width="2" height="1" fill="#1a1a2a"/>
+        <!-- Mouth -->
+        <rect x="5" y="7" width="1" height="1" fill="#c87858"/>
+        <rect x="6" y="8" width="4" height="1" fill="#c87858"/>
+        <rect x="10" y="7" width="1" height="1" fill="#c87858"/>
+        <!-- Neck -->
+        <rect x="6" y="9" width="4" height="2" fill="#e8c498"/>
+        <!-- Shirt -->
+        <rect x="3" y="11" width="10" height="5" fill="#c8ff00"/>
+        <rect x="2" y="12" width="2" height="4" fill="#c8ff00"/>
+        <rect x="12" y="12" width="2" height="4" fill="#c8ff00"/>
+      </svg>
+    </div>
+    <div class="portrait-label">★ available 2025/26 ★</div>
+  </div>
+</header>
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  <span>▶ DARIA.SNEGIREVA.DESIGN</span>
+  <span class="blink">■</span>
+  <span>OPEN TO: REMOTE / SYDNEY / MELBOURNE</span>
+  <span class="blink">■</span>
+  <span>STATUS: AVAILABLE</span>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">✦ Skills &amp; Tools</div>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">🎨</div>
+      <div class="skill-name">Graphic Design</div>
+      <div class="skill-sub">Branding · Print · Visual Identity</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-name">Web Design</div>
+      <div class="skill-sub">UI/UX · Figma · Responsive</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">💻</div>
+      <div class="skill-name">Frontend Dev</div>
+      <div class="skill-sub">React · Next.js · TypeScript</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-name">AI Animation</div>
+      <div class="skill-sub">Runway · Midjourney · Kling</div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section>
+  <div class="section-label">✦ Technical Stack</div>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h4>Design Tools</h4>
+      <p>Figma (Advanced) · Framer · Webflow · Principle · After Effects</p>
+    </div>
+    <div class="tech-card">
+      <h4>Frontend</h4>
+      <p>React · Next.js · TypeScript · Tailwind CSS · GSAP · Three.js</p>
+    </div>
+    <div class="tech-card">
+      <h4>AI &amp; Motion</h4>
+      <p>Runway Gen-3 · Kling AI · Midjourney · ElevenLabs · Hedra · Luma</p>
+    </div>
+    <div class="tech-card">
+      <h4>Other Skills</h4>
+      <p>Pixel Art · 2D Animation · Brand Identity · User Research · Illustration</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">✦ Case Studies</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-number">01 / UI&thinsp;·&thinsp;INTERACTION</div>
+      <h3>🐾 Pixel Tamagotchi</h3>
+      <p>Interactive pixel-art pet game with mood-based animations. Built from scratch — design, frontend, custom pixel sprites, and state logic.</p>
+      <span class="project-tag">Figma</span>
+      <span class="project-tag">JS</span>
+      <span class="project-tag">Pixel Art</span>
+      <span class="project-tag">CSS Animation</span>
+    </div>
+    <div class="project-card">
+      <div class="project-number">02 / FINTECH&thinsp;·&thinsp;DASHBOARD</div>
+      <h3>📊 FinTech Dashboard</h3>
+      <p>Analytics dashboard for a finance startup — data visualization, dark/light mode, responsive layout, and real-time chart components.</p>
+      <span class="project-tag">React</span>
+      <span class="project-tag">TypeScript</span>
+      <span class="project-tag">D3.js</span>
+      <span class="project-tag">UX Research</span>
+    </div>
+    <div class="project-card">
+      <div class="project-number">03 / E-COMMERCE&thinsp;·&thinsp;UX</div>
+      <h3>🛍️ EcoShop Redesign</h3>
+      <p>Full UX overhaul of a sustainable goods platform — user research, A/B testing, conversion optimization, and new design system.</p>
+      <span class="project-tag">Figma</span>
+      <span class="project-tag">Framer</span>
+      <span class="project-tag">UX Research</span>
+      <span class="project-tag">Design System</span>
+    </div>
+  </div>
+</section>
+
+<!-- AI ANIMATION -->
+<section id="ai">
+  <div class="section-label">✦ AI Animation Work</div>
+  <div class="ai-grid">
+    <div class="ai-card">
+      <div class="ai-badge">🧸 Kids Channel</div>
+      <h3>Dreamy Tales</h3>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/i5aFf94XO-w?si=nfl7oMOJywMVsCex" title="Dreamy Tales - AI Kids Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p>AI-illustrated stories for children. Gentle voice, colorful worlds, educational storytelling.</p>
+    </div>
+    <div class="ai-card">
+      <div class="ai-badge">🌙 Adult Channel</div>
+      <h3>Surreal Pulse</h3>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/Lg5B5drnoSo?si=6nmd1xM33qr3Bhwx" title="Surreal Pulse - AI Adult Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <p>Dark, poetic AI animation. Experimental visual storytelling with original sound design.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">✦ About</div>
+  <div class="about-box">
+    <p><strong>Hi, I'm Daria Snegireva.</strong> I'm a multidisciplinary designer and developer with over 5 years of experience across UI/UX, brand design, frontend development, and emerging creative technologies.</p>
+    <p>I'm currently focused on the intersection of design and AI — crafting animated experiences and interactive storytelling that feel genuinely alive. My process combines strong visual thinking, clean production code, and a playful-yet-rigorous approach to craft.</p>
+    <p>Whether it's a brand identity, a complex data dashboard, or an AI-generated animation series — I bring the same care to every pixel and every line of code.</p>
+    <p>I'm actively seeking roles in <strong>Australia (Sydney / Melbourne)</strong> or remote positions with US/AU-based companies. I'm eligible to apply for skilled migration visas and open to sponsorship conversations.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;align-items:center">
+      <a href="#projects" class="btn btn-primary">View Selected Work</a>
+      <a href="#" class="btn btn-secondary">Download CV (PDF)</a>
+      <span class="relocation-tag">🌏 Open to relocation → Sydney / Melbourne</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TAMAGOTCHI GAME ─── -->
+<section class="tama-section">
+  <div class="tama-label">
+    <div class="section-label" style="margin-bottom:0">✦ Interactive Demo</div>
+    <div>
+      <h2 style="font-size:14px;font-weight:700;color:var(--ink);font-family:'Space Mono',monospace">Pixel Pet — tap the buttons to play!</h2>
+      <p style="font-size:12px;color:var(--ink2)">Part of the Tamagotchi project case study</p>
+    </div>
+  </div>
+  <div class="tama-wrapper">
+    <div class="tama-game">
+      <div class="tama-screen">
+        <!-- Pet display -->
+        <div class="tama-pet-area">
+          <div class="tama-pet" id="tamaPet">
+            <!-- SVG pixel cat, changes with mood -->
+            <svg id="petSvg" class="pixel-pet-svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <!-- Body -->
+              <rect x="4" y="6" width="8" height="7" fill="#e8c498"/>
+              <!-- Head -->
+              <rect x="3" y="2" width="10" height="6" fill="#e8c498"/>
+              <!-- Ears -->
+              <rect x="3" y="1" width="2" height="2" fill="#e8c498"/>
+              <rect x="11" y="1" width="2" height="2" fill="#e8c498"/>
+              <rect x="3" y="1" width="1" height="1" fill="#e8a0a0"/>
+              <rect x="12" y="1" width="1" height="1" fill="#e8a0a0"/>
+              <!-- Eyes happy -->
+              <rect id="eyeL" x="5" y="4" width="2" height="2" fill="#2a2a4a"/>
+              <rect id="eyeR" x="9" y="4" width="2" height="2" fill="#2a2a4a"/>
+              <!-- Pupils -->
+              <rect x="5" y="4" width="1" height="1" fill="#5c8cf0"/>
+              <rect x="9" y="4" width="1" height="1" fill="#5c8cf0"/>
+              <!-- Nose -->
+              <rect x="7" y="6" width="2" height="1" fill="#e88080"/>
+              <!-- Mouth happy -->
+              <rect id="mouthL" x="6" y="7" width="1" height="1" fill="#c06060"/>
+              <rect id="mouthR" x="9" y="7" width="1" height="1" fill="#c06060"/>
+              <!-- Tail -->
+              <rect x="12" y="9" width="2" height="1" fill="#e8c498"/>
+              <rect x="13" y="8" width="1" height="2" fill="#e8c498"/>
+              <rect x="14" y="7" width="1" height="1" fill="#e8c498"/>
+              <!-- Paws -->
+              <rect x="4" y="12" width="2" height="2" fill="#e8c498"/>
+              <rect x="10" y="12" width="2" height="2" fill="#e8c498"/>
+              <!-- Belly stripe -->
+              <rect x="6" y="8" width="4" height="4" fill="#f8daba"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Stat bars -->
+        <div class="tama-stats">
+          <div class="tama-stat-row">
+            <span class="tama-stat-label">HNG</span>
+            <div class="tama-bar-bg"><div class="tama-bar-fill" id="barHunger" style="width:60%"></div></div>
+          </div>
+          <div class="tama-stat-row">
+            <span class="tama-stat-label">HAP</span>
+            <div class="tama-bar-bg"><div class="tama-bar-fill" id="barHappy" style="width:60%"></div></div>
+          </div>
+          <div class="tama-stat-row">
+            <span class="tama-stat-label">ENR</span>
+            <div class="tama-bar-bg"><div class="tama-bar-fill" id="barEnergy" style="width:60%"></div></div>
+          </div>
+        </div>
+        <div class="tama-status-msg" id="statusMsg">Purring contentedly...</div>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="tama-actions">
+        <button class="tama-btn" id="btnFeed">🍖 Feed</button>
+        <button class="tama-btn" id="btnPlay">🎾 Play</button>
+        <button class="tama-btn" id="btnSleep">💤 Sleep</button>
+        <button class="tama-btn" id="btnPet">✨ Pet</button>
+      </div>
+      <div class="tama-mood" id="tamaMood">● HAPPY ●</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-block">
+  <div class="contact-title">Let's Work Together</div>
+  <div class="contact-sub">Open to roles in Australia, US remote, and global remote opportunities</div>
+  <div class="contact-links">
+    <a href="mailto:daria@daria.design" class="contact-link">✉ Email Me</a>
+    <a href="#" rel="noopener noreferrer" class="contact-link">🐙 GitHub</a>
+    <a href="#" rel="noopener noreferrer" class="contact-link">🔗 LinkedIn</a>
+    <a href="#" rel="noopener noreferrer" class="contact-link">📄 Resume PDF</a>
+    <a href="#" rel="noopener noreferrer" class="contact-link">📺 YouTube</a>
+  </div>
+</section>
+
+<footer>© 2025 Daria Snegireva · Pixel by pixel · AI-powered · Ready for Sydney / Melbourne</footer>
+
+</div><!-- /wrap -->
+
+<script>
+// ─── THEME TOGGLE ───
+const btn = document.getElementById('themeBtn');
+if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark');btn.textContent='☀ Light'}
+btn.addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+  const d=document.body.classList.contains('dark');
+  localStorage.setItem('theme',d?'dark':'light');
+  btn.textContent=d?'☀ Light':'◐ Dark';
+});
+
+// ─── TAMAGOTCHI GAME ───
+  <!-- ТАМАГОЧИ — ЖИВАЯ ИГРА -->
+    <section class="tamagotchi-pure">
+        <iframe class="tamagotchi-iframe" src="tamagotchi/index.html" title="Pixel Tamagotchi Game - Interactive pet simulation" loading="lazy"></iframe>
+    </section>
