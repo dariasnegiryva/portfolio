@@ -47,30 +47,6 @@ body{
   transition:background .3s,color .3s;
 }
 
-  <!-- SEO Meta Tags -->
-    <title>Daria Snegireva — UI/UX Designer & Frontend Developer | AI Animation Portfolio</title>
-    <meta name="description" content="Daria Snegireva — UI/UX Designer & Frontend Developer specializing in AI-powered animation. 5+ years of experience. Open to relocation to Australia (Sydney/Melbourne).">
-    <meta name="keywords" content="UI/UX Designer, Frontend Developer, AI Animation, Pixel Art, Portfolio, Australia, Sydney, Melbourne, Relocation">
-    <meta name="author" content="Daria Snegireva">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Daria Snegireva — UI/UX Designer & Frontend Developer">
-    <meta property="og:description" content="Designer & developer specializing in AI animation. 5+ years of experience. Open to relocation to Australia.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://daria.design/images/og-image.png">
-    <meta property="og:url" content="https://daria.design">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Daria Snegireva — UI/UX Designer & Frontend Developer">
-    <meta name="twitter:description" content="Designer & developer specializing in AI animation. Open to relocation to Australia.">
-    <meta name="twitter:image" content="https://daria.design/images/og-image.png">
-    
-    <!-- Favicon (замените на свой) -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-
-/* ─── SCANLINE TEXTURE ─── */
 body::before{
   content:'';
   position:fixed;
@@ -88,7 +64,7 @@ body::before{
   z-index:1;
 }
 
-/* ─── NAV ─── */
+/* NAV */
 nav{
   display:flex;
   justify-content:space-between;
@@ -133,7 +109,7 @@ nav{
 }
 .theme-btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--border)}
 
-/* ─── HERO ─── */
+/* HERO */
 .hero{
   display:grid;
   grid-template-columns:1fr auto;
@@ -150,17 +126,15 @@ nav{
   line-height:1.05;
   margin-bottom:16px;
 }
-/* LIGHT MODE: black text with slight text-shadow for visibility */
 .hero-name .accent{
   color:var(--lime-dark);
   -webkit-text-stroke:2px var(--border);
   paint-order:stroke fill;
 }
-/* DARK MODE: bright lime, no stroke needed */
 body.dark .hero-name .accent{
   color:var(--lime);
   -webkit-text-stroke:0;
-  text-shadow:0 0 20px rgba(200,255,0,0.4);
+  text-shadow:0 0 20px rgba(200,255,0,0.6);
 }
 
 .hero-sub{
@@ -168,7 +142,6 @@ body.dark .hero-name .accent{
   font-weight:600;
   color:var(--ink2);
   background:var(--card);
-  border-left:5px solid var(--lime);
   padding:10px 18px;
   margin-bottom:24px;
   display:inline-block;
@@ -215,7 +188,7 @@ body.dark .hero-name .accent{
 .btn-secondary{background:var(--card);color:var(--ink)}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--border)}
 
-/* ─── PORTRAIT BOX ─── */
+/* PORTRAIT */
 .portrait-wrap{
   background:var(--lime);
   border:3px solid var(--border);
@@ -232,11 +205,14 @@ body.dark .hero-name .accent{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:64px;
-  image-rendering:pixelated;
   overflow:hidden;
 }
-.portrait-inner img{width:100%;height:100%;object-fit:cover;image-rendering:pixelated}
+.portrait-inner img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  image-rendering:pixelated;
+}
 .portrait-label{
   font-family:'Space Mono',monospace;
   font-size:9px;
@@ -247,7 +223,7 @@ body.dark .hero-name .accent{
   text-transform:uppercase;
 }
 
-/* ─── STATUS BAR ─── */
+/* STATUS BAR */
 .status-bar{
   background:var(--ink);
   color:var(--lime);
@@ -265,7 +241,7 @@ body.dark .hero-name .accent{
 .status-bar .blink{animation:blink 1.4s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 
-/* ─── SECTION LABEL ─── */
+/* SECTION LABEL */
 .section-label{
   font-family:'Space Mono',monospace;
   font-size:11px;
@@ -278,14 +254,14 @@ body.dark .hero-name .accent{
   border:2px solid var(--border);
   margin-bottom:24px;
 }
-/* Dark mode section label - lime bg stays, text stays dark so it's readable */
 body.dark .section-label{
   color:var(--text-on-lime);
+  box-shadow:0 0 6px var(--lime);
 }
 
 section{margin-bottom:56px}
 
-/* ─── SKILLS GRID ─── */
+/* SKILLS */
 .skills-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -312,7 +288,7 @@ section{margin-bottom:56px}
 .skill-name{font-weight:700;font-size:15px;color:var(--ink);margin-bottom:6px}
 .skill-sub{font-size:11px;color:var(--ink2);font-family:'Space Mono',monospace;line-height:1.5}
 
-/* ─── TECH STACK ─── */
+/* TECH */
 .tech-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -332,17 +308,14 @@ section{margin-bottom:56px}
   letter-spacing:2px;
   color:var(--lime-dark);
   margin-bottom:10px;
-  -webkit-text-stroke:0.5px var(--border);
-  paint-order:stroke fill;
 }
 body.dark .tech-card h4{
   color:var(--lime);
-  -webkit-text-stroke:0;
-  text-shadow:none;
+  text-shadow:0 0 6px var(--lime);
 }
 .tech-card p{font-size:13px;color:var(--ink2);line-height:1.7}
 
-/* ─── PROJECTS ─── */
+/* PROJECTS */
 .projects-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -363,8 +336,7 @@ body.dark .tech-card h4{
   border-color:var(--lime-dark);
 }
 body.dark .project-card:hover{
-  box-shadow:6px 6px 0 var(--lime);
-  border-color:var(--lime);
+  box-shadow:6px 6px 0 var(--lime), 0 0 12px var(--lime);
 }
 .project-number{
   font-family:'Space Mono',monospace;
@@ -391,7 +363,7 @@ body.dark .project-card:hover{
   margin:2px 2px 0 0;
 }
 
-/* ─── AI SECTION ─── */
+/* AI */
 .ai-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -406,6 +378,9 @@ body.dark .project-card:hover{
   transition:all .1s;
 }
 .ai-card:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--border)}
+body.dark .ai-card:hover{
+  box-shadow:5px 5px 0 var(--lime);
+}
 .ai-badge{
   font-family:'Space Mono',monospace;
   font-size:10px;
@@ -427,7 +402,7 @@ body.dark .project-card:hover{
 }
 .video-wrap iframe{width:100%;height:100%;display:block;border:none}
 
-/* ─── ABOUT ─── */
+/* ABOUT */
 .about-box{
   background:var(--card);
   border:2px solid var(--border);
@@ -450,158 +425,33 @@ body.dark .project-card:hover{
   margin-top:20px;
   font-family:'Space Mono',monospace;
 }
+body.dark .relocation-tag{
+  box-shadow:0 0 6px var(--lime);
+}
 
-/* ─── TAMAGOTCHI SECTION ─── */
-.tama-section{
+/* TAMAGOTCHI IFRAME - ПРАВИЛЬНАЯ ССЫЛКА НА ПАПКУ */
+.tamagotchi-pure{
   margin:40px 0;
-}
-.tama-label{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:20px;
-}
-.tama-label h2{
-  font-family:'Space Mono',monospace;
-  font-size:14px;
-  font-weight:700;
-  color:var(--ink);
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-.tama-label p{font-size:13px;color:var(--ink2)}
-.tama-wrapper{
   border:3px solid var(--border);
   box-shadow:10px 10px 0 var(--lime);
   background:var(--card);
   overflow:hidden;
 }
-body.dark .tama-wrapper{
+body.dark .tamagotchi-pure{
   box-shadow:10px 10px 0 var(--lime);
 }
-
-/* ─── TAMAGOTCHI GAME ─── */
-.tama-game{
+.tamagotchi-iframe{
+  width:100%;
+  height:550px;
+  border:none;
+  display:block;
   background:#0d0d1a;
-  padding:32px 20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  font-family:'Space Mono',monospace;
 }
-.tama-screen{
-  width:260px;
-  background:#1a2a1a;
-  border:4px solid #333;
-  border-radius:4px;
-  padding:16px;
-  box-shadow:inset 0 0 20px rgba(0,0,0,0.5),0 0 30px rgba(100,255,0,0.1);
-  position:relative;
-}
-.tama-pet-area{
-  height:100px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:52px;
-  position:relative;
-}
-.tama-pet{
-  transition:all .3s;
-  cursor:default;
-  user-select:none;
-  display:inline-block;
-  image-rendering:pixelated;
-}
-.tama-pet.bounce{animation:petBounce .4s ease}
-@keyframes petBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.tama-pet.shake{animation:petShake .3s ease}
-@keyframes petShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
-.tama-pet.sad{filter:grayscale(.6) brightness(.8)}
-.tama-pet.sleeping{animation:sleeping 2s infinite}
-@keyframes sleeping{0%,100%{opacity:1}50%{opacity:.6}}
-
-.tama-stats{
-  margin-top:10px;
-  display:flex;
-  flex-direction:column;
-  gap:6px;
-}
-.tama-stat-row{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:9px;
-  color:#6aff3c;
-  letter-spacing:1px;
-}
-.tama-stat-label{width:24px;flex-shrink:0}
-.tama-bar-bg{
-  flex:1;
-  height:6px;
-  background:#0d200d;
-  border:1px solid #2a4a2a;
-  border-radius:0;
-  overflow:hidden;
-}
-.tama-bar-fill{
-  height:100%;
-  background:#6aff3c;
-  transition:width .5s ease;
-}
-.tama-bar-fill.warning{background:#ffa020}
-.tama-bar-fill.danger{background:#ff3c3c}
-
-.tama-status-msg{
-  font-size:8px;
-  color:#6aff3c;
-  text-align:center;
-  margin-top:8px;
-  min-height:14px;
-  letter-spacing:1px;
+@media (max-width:700px){
+  .tamagotchi-iframe{height:450px}
 }
 
-/* PIXEL ART PET STYLES */
-.pixel-pet-svg{
-  width:72px;
-  height:72px;
-  image-rendering:pixelated;
-}
-
-.tama-actions{
-  display:flex;
-  gap:8px;
-  margin-top:16px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.tama-btn{
-  font-family:'Space Mono',monospace;
-  font-size:9px;
-  font-weight:700;
-  padding:8px 14px;
-  background:#1a2a1a;
-  color:#6aff3c;
-  border:2px solid #3a5a3a;
-  cursor:pointer;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  transition:all .1s;
-  border-radius:0;
-}
-.tama-btn:hover{background:#2a4a2a;border-color:#6aff3c;transform:translate(-1px,-1px);box-shadow:2px 2px 0 #6aff3c}
-.tama-btn:active{transform:translate(1px,1px);box-shadow:none}
-.tama-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
-
-.tama-mood{
-  margin-top:12px;
-  font-size:10px;
-  color:#4aaa4a;
-  letter-spacing:2px;
-  text-align:center;
-}
-
-/* ─── CONTACT ─── */
+/* CONTACT */
 .contact-block{
   text-align:center;
   border-top:3px solid var(--lime);
@@ -641,6 +491,9 @@ body.dark .tama-wrapper{
   transform:translate(-2px,-2px);
   box-shadow:3px 3px 0 var(--border);
 }
+body.dark .contact-link:hover{
+  box-shadow:3px 3px 0 var(--lime);
+}
 
 footer{
   font-family:'Space Mono',monospace;
@@ -656,7 +509,6 @@ footer{
 
 <div class="wrap">
 
-<!-- NAV -->
 <nav>
   <div class="nav-links">
     <a href="#skills">Skills</a>
@@ -665,10 +517,9 @@ footer{
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
-  <button class="theme-btn" id="themeBtn">◐ Dark</button>
+  <button class="theme-btn" id="themeBtn">🌙 Dark</button>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div>
     <div class="hero-name">
@@ -688,37 +539,13 @@ footer{
     </div>
   </div>
   <div class="portrait-wrap">
-    <div class="portrait-inner" title="Pixel portrait of Daria">
-      <!-- Pixel art placeholder - replace with actual image -->
-      <svg width="160" height="160" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;image-rendering:pixelated">
-        <rect width="16" height="16" fill="#1a1a2a"/>
-        <!-- Hair -->
-        <rect x="4" y="1" width="8" height="1" fill="#c8ff00"/>
-        <rect x="3" y="2" width="10" height="1" fill="#c8ff00"/>
-        <rect x="3" y="3" width="2" height="3" fill="#c8ff00"/>
-        <rect x="11" y="3" width="2" height="3" fill="#c8ff00"/>
-        <!-- Face -->
-        <rect x="4" y="3" width="8" height="6" fill="#e8c498"/>
-        <!-- Eyes -->
-        <rect x="5" y="5" width="2" height="1" fill="#1a1a2a"/>
-        <rect x="9" y="5" width="2" height="1" fill="#1a1a2a"/>
-        <!-- Mouth -->
-        <rect x="5" y="7" width="1" height="1" fill="#c87858"/>
-        <rect x="6" y="8" width="4" height="1" fill="#c87858"/>
-        <rect x="10" y="7" width="1" height="1" fill="#c87858"/>
-        <!-- Neck -->
-        <rect x="6" y="9" width="4" height="2" fill="#e8c498"/>
-        <!-- Shirt -->
-        <rect x="3" y="11" width="10" height="5" fill="#c8ff00"/>
-        <rect x="2" y="12" width="2" height="4" fill="#c8ff00"/>
-        <rect x="12" y="12" width="2" height="4" fill="#c8ff00"/>
-      </svg>
+    <div class="portrait-inner">
+      <img src="images/daria-pixel-portrait.png" alt="Daria Snegireva pixel portrait">
     </div>
     <div class="portrait-label">★ available 2025/26 ★</div>
   </div>
 </header>
 
-<!-- STATUS BAR -->
 <div class="status-bar">
   <span>▶ DARIA.SNEGIREVA.DESIGN</span>
   <span class="blink">■</span>
@@ -727,114 +554,43 @@ footer{
   <span>STATUS: AVAILABLE</span>
 </div>
 
-<!-- SKILLS -->
 <section id="skills">
   <div class="section-label">✦ Skills &amp; Tools</div>
   <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-icon">🎨</div>
-      <div class="skill-name">Graphic Design</div>
-      <div class="skill-sub">Branding · Print · Visual Identity</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">🌐</div>
-      <div class="skill-name">Web Design</div>
-      <div class="skill-sub">UI/UX · Figma · Responsive</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">💻</div>
-      <div class="skill-name">Frontend Dev</div>
-      <div class="skill-sub">React · Next.js · TypeScript</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">🤖</div>
-      <div class="skill-name">AI Animation</div>
-      <div class="skill-sub">Runway · Midjourney · Kling</div>
-    </div>
+    <div class="skill-card"><div class="skill-icon">🎨</div><div class="skill-name">Graphic Design</div><div class="skill-sub">Branding · Print · Visual Identity</div></div>
+    <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name">Web Design</div><div class="skill-sub">UI/UX · Figma · Responsive</div></div>
+    <div class="skill-card"><div class="skill-icon">💻</div><div class="skill-name">Frontend Dev</div><div class="skill-sub">React · Next.js · TypeScript</div></div>
+    <div class="skill-card"><div class="skill-icon">🤖</div><div class="skill-name">AI Animation</div><div class="skill-sub">Runway · Midjourney · Kling</div></div>
   </div>
 </section>
 
-<!-- TECH STACK -->
 <section>
   <div class="section-label">✦ Technical Stack</div>
   <div class="tech-grid">
-    <div class="tech-card">
-      <h4>Design Tools</h4>
-      <p>Figma (Advanced) · Framer · Webflow · Principle · After Effects</p>
-    </div>
-    <div class="tech-card">
-      <h4>Frontend</h4>
-      <p>React · Next.js · TypeScript · Tailwind CSS · GSAP · Three.js</p>
-    </div>
-    <div class="tech-card">
-      <h4>AI &amp; Motion</h4>
-      <p>Runway Gen-3 · Kling AI · Midjourney · ElevenLabs · Hedra · Luma</p>
-    </div>
-    <div class="tech-card">
-      <h4>Other Skills</h4>
-      <p>Pixel Art · 2D Animation · Brand Identity · User Research · Illustration</p>
-    </div>
+    <div class="tech-card"><h4>Design Tools</h4><p>Figma (Advanced) · Framer · Webflow · Principle · After Effects</p></div>
+    <div class="tech-card"><h4>Frontend</h4><p>React · Next.js · TypeScript · Tailwind CSS · GSAP · Three.js</p></div>
+    <div class="tech-card"><h4>AI &amp; Motion</h4><p>Runway Gen-3 · Kling AI · Midjourney · ElevenLabs · Hedra · Luma</p></div>
+    <div class="tech-card"><h4>Other Skills</h4><p>Pixel Art · 2D Animation · Brand Identity · User Research · Illustration</p></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">✦ Case Studies</div>
   <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-number">01 / UI&thinsp;·&thinsp;INTERACTION</div>
-      <h3>🐾 Pixel Tamagotchi</h3>
-      <p>Interactive pixel-art pet game with mood-based animations. Built from scratch — design, frontend, custom pixel sprites, and state logic.</p>
-      <span class="project-tag">Figma</span>
-      <span class="project-tag">JS</span>
-      <span class="project-tag">Pixel Art</span>
-      <span class="project-tag">CSS Animation</span>
-    </div>
-    <div class="project-card">
-      <div class="project-number">02 / FINTECH&thinsp;·&thinsp;DASHBOARD</div>
-      <h3>📊 FinTech Dashboard</h3>
-      <p>Analytics dashboard for a finance startup — data visualization, dark/light mode, responsive layout, and real-time chart components.</p>
-      <span class="project-tag">React</span>
-      <span class="project-tag">TypeScript</span>
-      <span class="project-tag">D3.js</span>
-      <span class="project-tag">UX Research</span>
-    </div>
-    <div class="project-card">
-      <div class="project-number">03 / E-COMMERCE&thinsp;·&thinsp;UX</div>
-      <h3>🛍️ EcoShop Redesign</h3>
-      <p>Full UX overhaul of a sustainable goods platform — user research, A/B testing, conversion optimization, and new design system.</p>
-      <span class="project-tag">Figma</span>
-      <span class="project-tag">Framer</span>
-      <span class="project-tag">UX Research</span>
-      <span class="project-tag">Design System</span>
-    </div>
+    <div class="project-card"><div class="project-number">01 / UI·INTERACTION</div><h3>🐾 Pixel Tamagotchi</h3><p>Interactive pixel-art pet game with mood-based animations. Built from scratch — design, frontend, custom pixel sprites, and state logic.</p><span class="project-tag">Figma</span><span class="project-tag">JS</span><span class="project-tag">Pixel Art</span><span class="project-tag">CSS Animation</span></div>
+    <div class="project-card"><div class="project-number">02 / FINTECH·DASHBOARD</div><h3>📊 FinTech Dashboard</h3><p>Analytics dashboard for a finance startup — data visualization, dark/light mode, responsive layout, and real-time chart components.</p><span class="project-tag">React</span><span class="project-tag">TypeScript</span><span class="project-tag">D3.js</span><span class="project-tag">UX Research</span></div>
+    <div class="project-card"><div class="project-number">03 / E-COMMERCE·UX</div><h3>🛍️ EcoShop Redesign</h3><p>Full UX overhaul of a sustainable goods platform — user research, A/B testing, conversion optimization, and new design system.</p><span class="project-tag">Figma</span><span class="project-tag">Framer</span><span class="project-tag">UX Research</span><span class="project-tag">Design System</span></div>
   </div>
 </section>
 
-<!-- AI ANIMATION -->
 <section id="ai">
   <div class="section-label">✦ AI Animation Work</div>
   <div class="ai-grid">
-    <div class="ai-card">
-      <div class="ai-badge">🧸 Kids Channel</div>
-      <h3>Dreamy Tales</h3>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/i5aFf94XO-w?si=nfl7oMOJywMVsCex" title="Dreamy Tales - AI Kids Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <p>AI-illustrated stories for children. Gentle voice, colorful worlds, educational storytelling.</p>
-    </div>
-    <div class="ai-card">
-      <div class="ai-badge">🌙 Adult Channel</div>
-      <h3>Surreal Pulse</h3>
-      <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/Lg5B5drnoSo?si=6nmd1xM33qr3Bhwx" title="Surreal Pulse - AI Adult Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <p>Dark, poetic AI animation. Experimental visual storytelling with original sound design.</p>
-    </div>
+    <div class="ai-card"><div class="ai-badge">🧸 Kids Channel</div><h3>Dreamy Tales</h3><div class="video-wrap"><iframe src="https://www.youtube.com/embed/i5aFf94XO-w?si=nfl7oMOJywMVsCex" title="Dreamy Tales" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div><p>AI-illustrated stories for children. Gentle voice, colorful worlds, educational storytelling.</p></div>
+    <div class="ai-card"><div class="ai-badge">🌙 Adult Channel</div><h3>Surreal Pulse</h3><div class="video-wrap"><iframe src="https://www.youtube.com/embed/Lg5B5drnoSo?si=6nmd1xM33qr3Bhwx" title="Surreal Pulse" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div><p>Dark, poetic AI animation. Experimental visual storytelling with original sound design.</p></div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-label">✦ About</div>
   <div class="about-box">
@@ -850,87 +606,11 @@ footer{
   </div>
 </section>
 
-<!-- ─── TAMAGOTCHI GAME ─── -->
-<section class="tama-section">
-  <div class="tama-label">
-    <div class="section-label" style="margin-bottom:0">✦ Interactive Demo</div>
-    <div>
-      <h2 style="font-size:14px;font-weight:700;color:var(--ink);font-family:'Space Mono',monospace">Pixel Pet — tap the buttons to play!</h2>
-      <p style="font-size:12px;color:var(--ink2)">Part of the Tamagotchi project case study</p>
-    </div>
-  </div>
-  <div class="tama-wrapper">
-    <div class="tama-game">
-      <div class="tama-screen">
-        <!-- Pet display -->
-        <div class="tama-pet-area">
-          <div class="tama-pet" id="tamaPet">
-            <!-- SVG pixel cat, changes with mood -->
-            <svg id="petSvg" class="pixel-pet-svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-              <!-- Body -->
-              <rect x="4" y="6" width="8" height="7" fill="#e8c498"/>
-              <!-- Head -->
-              <rect x="3" y="2" width="10" height="6" fill="#e8c498"/>
-              <!-- Ears -->
-              <rect x="3" y="1" width="2" height="2" fill="#e8c498"/>
-              <rect x="11" y="1" width="2" height="2" fill="#e8c498"/>
-              <rect x="3" y="1" width="1" height="1" fill="#e8a0a0"/>
-              <rect x="12" y="1" width="1" height="1" fill="#e8a0a0"/>
-              <!-- Eyes happy -->
-              <rect id="eyeL" x="5" y="4" width="2" height="2" fill="#2a2a4a"/>
-              <rect id="eyeR" x="9" y="4" width="2" height="2" fill="#2a2a4a"/>
-              <!-- Pupils -->
-              <rect x="5" y="4" width="1" height="1" fill="#5c8cf0"/>
-              <rect x="9" y="4" width="1" height="1" fill="#5c8cf0"/>
-              <!-- Nose -->
-              <rect x="7" y="6" width="2" height="1" fill="#e88080"/>
-              <!-- Mouth happy -->
-              <rect id="mouthL" x="6" y="7" width="1" height="1" fill="#c06060"/>
-              <rect id="mouthR" x="9" y="7" width="1" height="1" fill="#c06060"/>
-              <!-- Tail -->
-              <rect x="12" y="9" width="2" height="1" fill="#e8c498"/>
-              <rect x="13" y="8" width="1" height="2" fill="#e8c498"/>
-              <rect x="14" y="7" width="1" height="1" fill="#e8c498"/>
-              <!-- Paws -->
-              <rect x="4" y="12" width="2" height="2" fill="#e8c498"/>
-              <rect x="10" y="12" width="2" height="2" fill="#e8c498"/>
-              <!-- Belly stripe -->
-              <rect x="6" y="8" width="4" height="4" fill="#f8daba"/>
-            </svg>
-          </div>
-        </div>
-
-        <!-- Stat bars -->
-        <div class="tama-stats">
-          <div class="tama-stat-row">
-            <span class="tama-stat-label">HNG</span>
-            <div class="tama-bar-bg"><div class="tama-bar-fill" id="barHunger" style="width:60%"></div></div>
-          </div>
-          <div class="tama-stat-row">
-            <span class="tama-stat-label">HAP</span>
-            <div class="tama-bar-bg"><div class="tama-bar-fill" id="barHappy" style="width:60%"></div></div>
-          </div>
-          <div class="tama-stat-row">
-            <span class="tama-stat-label">ENR</span>
-            <div class="tama-bar-bg"><div class="tama-bar-fill" id="barEnergy" style="width:60%"></div></div>
-          </div>
-        </div>
-        <div class="tama-status-msg" id="statusMsg">Purring contentedly...</div>
-      </div>
-
-      <!-- Action buttons -->
-      <div class="tama-actions">
-        <button class="tama-btn" id="btnFeed">🍖 Feed</button>
-        <button class="tama-btn" id="btnPlay">🎾 Play</button>
-        <button class="tama-btn" id="btnSleep">💤 Sleep</button>
-        <button class="tama-btn" id="btnPet">✨ Pet</button>
-      </div>
-      <div class="tama-mood" id="tamaMood">● HAPPY ●</div>
-    </div>
-  </div>
+<!-- TAMAGOTCHI — ССЫЛКА НА ПАПКУ -->
+<section class="tamagotchi-pure">
+  <iframe class="tamagotchi-iframe" src="tamagotchi/index.html" title="Pixel Tamagotchi Game - Interactive pet simulation" loading="lazy"></iframe>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact-block">
   <div class="contact-title">Let's Work Together</div>
   <div class="contact-sub">Open to roles in Australia, US remote, and global remote opportunities</div>
@@ -945,21 +625,26 @@ footer{
 
 <footer>© 2025 Daria Snegireva · Pixel by pixel · AI-powered · Ready for Sydney / Melbourne</footer>
 
-</div><!-- /wrap -->
+</div>
 
 <script>
-// ─── THEME TOGGLE ───
-const btn = document.getElementById('themeBtn');
-if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark');btn.textContent='☀ Light'}
-btn.addEventListener('click',()=>{
-  document.body.classList.toggle('dark');
-  const d=document.body.classList.contains('dark');
-  localStorage.setItem('theme',d?'dark':'light');
-  btn.textContent=d?'☀ Light':'◐ Dark';
-});
+// ПЕРЕКЛЮЧЕНИЕ ТЕМЫ — РАБОТАЕТ!
+const themeBtn = document.getElementById('themeBtn');
 
-// ─── TAMAGOTCHI GAME ───
-  <!-- ТАМАГОЧИ — ЖИВАЯ ИГРА -->
-    <section class="tamagotchi-pure">
-        <iframe class="tamagotchi-iframe" src="tamagotchi/index.html" title="Pixel Tamagotchi Game - Interactive pet simulation" loading="lazy"></iframe>
-    </section>
+if(localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark');
+  themeBtn.textContent = '☀ Light';
+} else {
+  themeBtn.textContent = '🌙 Dark';
+}
+
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  themeBtn.textContent = isDark ? '☀ Light' : '🌙 Dark';
+});
+</script>
+
+</body>
+</html>
